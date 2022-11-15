@@ -5,4 +5,4 @@
   tasks:
   - name: debug
     debug:
-      message: hi
+      msg: This is a test message to indicate if the playbook was executed
