@@ -1,0 +1,7 @@
+users:
+- username: alice
+  groupname: dev
+- username: bob
+  groupname: devops
+- username: cherry
+  groupname: staff
