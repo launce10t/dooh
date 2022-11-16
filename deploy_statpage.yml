@@ -1,0 +1,23 @@
+---
+- name: Create stat page on web servers
+  hosts: all
+  gather_facts: true
+  become: true
+  tasks:
+  - name: deploy stat page
+    copy:
+      content: "{{ansible_hostname}} - os: {{ansible_facts['distribution']}} family: {{ansible_facts['os_family']}}
+      dest: /var/www/html/stat.html
+    become: true
+    tags:
+    - never
+    - stat
+
+  - name: blank stat page
+    copy:
+      content: ""
+      dest: /var/www/html/stat.html
+    become: true
+    tags:
+    - never
+    - nostat
