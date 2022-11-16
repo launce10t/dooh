@@ -4,7 +4,7 @@
   become: true
   gather_facts: true
   vars_files:
-  - user_list.yml
+  - user_list0.yml
   tasks:
   - name: create groups
     group:
