@@ -4,7 +4,7 @@
   become: true
   gather_facts: true
   vars_files:
-  - user_list0.yml
+  - user_list.yml
   tasks:
   - name: create groups
     group:
@@ -20,5 +20,5 @@
       name: "{{item.username}}"
       group: "{{item.groupname}}"
       state: present
-    loop:
+    with_items:
     - "{{users}}"
